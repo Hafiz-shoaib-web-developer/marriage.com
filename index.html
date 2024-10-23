@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+    /* General Styles */
+    body {
+        background-color: white;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+#element{
+    background: linear-gradient(45deg, #f06595, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#hi{
+    background: linear-gradient(45deg, #f06595, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+    /* Navigation */
+    .navbar {
+        background-color: #dad124;
+        font-weight: bolder;
+        font-style: oblique;
+    }
+
+    .navbar-brand, .nav-link {
+        color: rgb(0, 0, 0)!important;
+    }
+
+    .nav-link:hover {
+        color: rgb(12, 11, 11) !important;
+    }
+
+    /* Responsive grid container */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+        gap: 20px; /* Space between the boxes */
+        padding: 20px;
+    }
+
+    .grid-item {
+        padding: 20px; /* Adjust padding */
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    /* Box style */
+    .box {
+        padding: 15px;
+        text-align: center;
+    }
+
+    /* Image responsiveness */
+    .grid-item img {
+        max-width: 100%; /* Ensure image scales down */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Adjust text size for smaller screens */
+    @media (max-width: 768px) {
+        .grid-item {
+            font-size: 1rem; /* Slightly smaller text for mobile */
+            
+        }
+
+        #bobzi {
+            font-size: 1.5rem; /* Adjust font size */
+       
+        }
+    }
+    
+    .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7vh; /* Full viewport height to center vertically */
+}
+
+.beautiful-button {
+    background: linear-gradient(45deg, #ff6b6b, #f06595);
+    border: none;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    padding: 10px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+
+.beautiful-button:hover {
+    background: linear-gradient(45deg, #f06595, #ff6b6b);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+.beautiful-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+    .hr{
+        background-color: rgb(36, 34, 34);
+        padding: 0.5px;
+    }
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column; /* Adjust this to row if needed */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  max-width: 100%;
+  min-height: 60vh; /* Makes sure it takes the full height of the screen */
+}
+
+@media (min-width: 768px) {
+  .flex-container {
+    flex-direction: row; /* Change layout for larger screens */
+  }
+}
+.container0 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.box0 {
+    background-color: rgb(246, 246, 246);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    min-width: 250px; /* Minimum width for mobile */
+    max-width: 300px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.box0:hover {
+    transform: scale(1.05);
+}
+
+.logo4 {
+    width: 80px; /* Logo width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space between logo and text */
+}
+
+@media (max-width: 768px) {
+    .box0 {
+        flex: 100%;
+    }
+}
+.asan{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.asan2{
+    text-align: center;
+    font-size: 0.5rem;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.carousel-container {
+    width: 100%;
+    max-width: 600px; /* Maximum width for desktop */
+    margin: auto;
+    overflow: hidden; /* Hide overflowing images */
+    position: relative;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Transition effect */
+}
+
+.carousel-image {
+    min-width: 100%; /* Each image takes full width of container */
+    height: auto; /* Maintain aspect ratio */
+}
+.new-footer {
+    background-color: #75933e; 
+    color: #ffffff;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-section {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+}
+
+.footer-bottom {
+    padding: 15px 0;
+    font-size: 14px;
+    color: 14121;
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/"><img src="https://asannikah.com/wp-content/uploads/2024/07/asannikah_logo_png__1_-removebg-preview.png" width="120px" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Choose your love</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://hafiz-shoaib-web-developer.github.io/my-projects/">Why us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="box" id="bobzi">
+                <div id="hi">Hi</div>
+                <span id="element"></span>
+            </div>
+        </div>
+        <div class="grid-item"><img src="g.PNG" alt="Image" class="img"></div>
+    </div>
+    <div class="button-container">
+        <button class="beautiful-button">Soulmate</button>
+      </div>   
+    <hr class="hr">
+    <div class="carousel-container">
+      <div class="carousel-images">
+          <img src="https://www.aljazeera.com/wp-content/uploads/2024/02/AP24032288290274-1707042517.jpg?fit=1170%2C819&quality=80" alt="Image 1" class="carousel-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShnbNmdLjwom9xlfzg1jmI5PVNoZQyj8lqVEAXH9dXU9-tUSUpFcA54PEWlz51sfyEr5s&usqp=CAU" alt="Image 2" class="carousel-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyeVnDKksQn_BRPH4_CQKuTVZtIHZf0pd2LUg2MViHB9MD1DYEN-LoGXWvdMB0CvuJ5M8&usqp=CAU" alt="Image 3" class="carousel-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtJymIl3MbPdRSqhSj6kcMkKuKv9F_btzc5NcZTC2FeqwPbRQbeoeG8agM0pvNUNu6lpw&usqp=CAU" alt="Image 1" class="carousel-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2LFNKki51sQ9ik56cRj2Vw1BIdSvHTAuUXCgXK71jyD3QZDzIeq0tHdgd2GUFZf_77Cg&usqp=CAU" alt="Image 2" class="carousel-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrU4K4Rrq--LepgwWoiBCwAcp_CPTdyD7FWLx74b4vM2TfbFuHMr8dVhZ7lbOGPLxjdEs&usqp=CAU" alt="Image 3" class="carousel-image">
+          <img src="https://www.aljazeera.com/wp-content/uploads/2024/02/AP24032288290274-1707042517.jpg?fit=1170%2C819&quality=80" alt="Image 1" class="carousel-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShnbNmdLjwom9xlfzg1jmI5PVNoZQyj8lqVEAXH9dXU9-tUSUpFcA54PEWlz51sfyEr5s&usqp=CAU" alt="Image 2" class="carousel-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyeVnDKksQn_BRPH4_CQKuTVZtIHZf0pd2LUg2MViHB9MD1DYEN-LoGXWvdMB0CvuJ5M8&usqp=CAU" alt="Image 3" class="carousel-image">
+      </div>
+    <div class="flex-container">
+        <h1 class="asan">We Are Providing Our Best Services</h1>
+        <div class="container0">
+            <div class="box0">
+                <img src="match.png" alt="Logo 1" class="logo4">
+                <h1 class=".asan2">Match Making</h1>
+                <p> Marriage.com is your trusted marriage center dedicated to connecting individuals with their perfect life partners. We specialize in personalized matchmaking services, ensuring meaningful and lasting relationships tailored to your values and preferences. Let us help you find the love and companionship you deserve.</p>
+                <div class="button-container">
+                    <button class="beautiful-button">Learn More</button>
+                  </div> 
+            </div>
+            <div class="box0">
+                <img src="team.png" alt="Logo 2" class="logo4">
+                <h1 class=".asan2">Court Marriage</h1>
+                <p>Court Marriage offers a straightforward and legally sound approach to marriage, ensuring a hassle-free process for couples. We specialize in providing efficient court marriage services, respecting your privacy and handling all legal formalities with professionalism and care. Start your journey together with confidence and ease.</p>
+                <div class="button-container">
+                    <button class="beautiful-button">Learn More</button>
+                  </div> 
+            </div>
+            <div class="box0">
+                <img src="user.png" alt="Logo 3" class="logo4">
+                <h1 class=".asan2">Event Management</h1>
+                <p>Marriage.com of Event Management is your one-stop solution for seamless and memorable wedding experiences. We specialize in organizing stress-free, elegant, and customized events, ensuring your special day is a true reflection of your love story. Trust us to make your nikah as beautiful and effortless as it should be.</p>
+                <div class="button-container">
+                    <button class="beautiful-button">Learn More</button>
+                  </div> 
+            </div>
+        </div>
+      </div>
+      <hr class="hr">
+      <!--dosra box-->
+      <div class="flex-container">
+        <h1 class="asan">Personalized Matching</h1>
+        <div class="container0">
+            <div class="box0">
+                <img src="match.png" alt="Logo 1" class="logo4">
+                <h1 class=".asan2">Registration & Verification</h1>
+                <p> Click the Register button and enter basic details to get yourself verified by the system. Upon verification, you will be directed to fill a form and provide information about yourself and your preferred partner…</p>
+                <div class="button-container">
+                    <button class="beautiful-button">Learn More</button>
+                  </div> 
+            </div>
+            <div class="box0">
+                <img src="n.png" alt="Logo 2" class="logo4">
+                <h1 class=".asan2">Creating your profile</h1>
+                <p>Complete your profile by uploading your best photos, along with any specific details you wish to add in order to make your profile impressive, and attract better responses…</p>
+                <div class="button-container">
+                    <button class="beautiful-button">Learn More</button>
+                  </div> 
+            </div>
+            <div class="box0">
+                <img src="h.png" alt="Logo 3" class="logo4">
+                <h1 class=".asan2">Communicating with your personalized match maker</h1>
+                <p>Once you’re on the network, feel free to contact our representatives and let them identify your needs and preferences…</p>
+                <div class="button-container">
+                    <button class="beautiful-button">Learn More</button>
+                  </div> 
+            </div>
+        </div>
+      </div>
+      <hr class="hr">
+    </div>
+    <footer class="new-footer">
+        <div class="footer-content">
+          <div class="footer-section about">
+            <h3>Marriage.com</h3>
+            <p> <div>We offer a variety of personalized services to help you </div><div>find your perfect match, including matchmaking consultations, compatibility assessments, and event planning for your special day.</div></p>
+          </div>
+          <div class="footer-section contact">
+            <h3>for more info</h3>
+            <p>Email: Marriage-centre@gmail.com</p>
+            <p>Phone: +92 3460206227</p>
+          </div>
+          <div class="footer-section contact">
+            <h3>Contact Me</h3>
+            <p>Email: Marriage-centre@gmail.com</p>
+            <p>Phone: +92 3460206227</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Marriage.Com | All Rights Reserved</p>
+        </div>
+      </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ["Two hearts, one love, united forever.", "A lifelong journey, together forever.", "Together in love, today and always."],
+            typeSpeed: 45,
+        });
+        const images = document.querySelectorAll('.carousel-image');
+let currentIndex = 0;
+
+function changeImage() {
+    currentIndex = (currentIndex + 1) % images.length; // Loop through images
+    const offset = -currentIndex * 100; // Calculate offset
+    document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`; // Move images
+}
+
+// Change image every 3 seconds
+setInterval(changeImage, 3000);
+
+    </script>
+</body>
+</html>
